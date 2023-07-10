@@ -1,0 +1,68 @@
+<html>
+  <body>
+  <form id="visitingCardForm">
+    <div>
+        <label for="fullName">ФИО:</label>
+        <input type="text" id="fullName" required>
+    </div>
+    <br>
+    <div>
+        <label for="dateOfBirth">Дата рождения:</label>
+        <input type="date" id="dateOfBirth" required>
+    </div>
+    <br>
+    <div>
+        <label for="studentId">Номер зачетки:</label>
+        <input type="text" id="studentId" required>
+    </div>
+    <br>
+    <div>
+        <label for="gender">Пол:</label>
+        <select id="gender" required>
+            <option value="male">Мужской</option>
+            <option value="female">Женский</option>
+        </select>
+    </div>
+    <br>
+    <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+    </div>
+    <br>
+    <div>
+        <label for="grade">Оценка:</label>
+        <select id="grade" required>
+            <option value="excellent">Отлично</option>
+            <option value="good">Хорошо</option>
+            <option value="satisfactory">Удовлетворительно</option>
+            <option value="unsatisfactory">Неудовлетворительно</option>
+        </select>
+    </div>
+    <br>
+    <button type="button" onclick="generateVisitingCard()">Создать визитную карточку</button>
+</form>
+
+<div id="visitingCard"></div>
+
+<script>
+    function generateVisitingCard() {
+        var fullName = document.getElementById("fullName").value;
+        var dateOfBirth = document.getElementById("dateOfBirth").value;
+        var studentId = document.getElementById("studentId").value;
+        var gender = document.getElementById("gender").value;
+        var email = document.getElementById("email").value;
+        var grade = document.getElementById("grade").value;
+
+        var visitingCardHTML = "<h3>Визитная карточка</h3>";
+        visitingCardHTML += "<p>ФИО: " + fullName + "</p>";
+        visitingCardHTML += "<p>Дата рождения: " + dateOfBirth + "</p>";
+        visitingCardHTML += "<p>Номер зачетки: " + studentId + "</p>";
+        visitingCardHTML += "<p>Пол: " + gender + "</p>";
+        visitingCardHTML += "<p>Email: " + email + "</p>";
+        visitingCardHTML += "<p>Оценка: " + grade + "</p>";
+
+        document.getElementById("visitingCard").innerHTML = visitingCardHTML;
+    }
+</script>
+  </body>
+</html>
